@@ -1,0 +1,68 @@
+library = {
+    "python101": "Available",
+    "datascience": "Available",
+    "algorithms": "Available"
+}
+
+borrowed_books = set()
+
+while True:
+
+    print("\n1 - Add Book")
+    print("2 - Borrow Book")
+    print("3 - Return Book")
+    print("4 - View All Books")
+    print("5 - Exit")
+
+    secim = input("Choose: ")
+
+    if secim == "1":
+
+        kitap = input("Book name: ").lower()
+
+        if kitap in library:
+            print("Book already exists.")
+        else:
+            library[kitap] = "Available"
+            print("Book added.")
+
+    elif secim == "2":
+
+        kitap = input("Book name: ").lower()
+
+        if kitap in library:
+            if library[kitap] == "Available":
+                library[kitap] = "Borrowed"
+                borrowed_books.add(kitap)
+                print("Book borrowed.")
+            else:
+                print("Book is already borrowed.")
+        else:
+            print("Book not found.")
+
+    elif secim == "3":
+
+        kitap = input("Book name: ").lower()
+
+        if kitap in library:
+            library[kitap] = "Available"
+            borrowed_books.discard(kitap)
+            print("Book returned.")
+        else:
+            print("Book not found.")
+
+    elif secim == "4":
+
+        for kitap in library:
+            print(kitap, "-", library[kitap])
+
+        print("Total books:", len(library))
+        print("Borrowed books:", len(borrowed_books))
+
+    elif secim == "5":
+
+        print("Goodbye!")
+        break
+
+    else:
+        print("Wrong choice.")

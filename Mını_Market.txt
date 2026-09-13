@@ -1,0 +1,45 @@
+urunler={"elma":3 , "muz":5 , "ekmek":2,"sut":4}
+urun1 = input("Birinci urunu giriniz:")
+urun2= input("ikinci urunu giriniz :")
+urun3=input("Ucuncu urunu giriniz :")
+urun4=input("Dorduncu urunu giriniz :")
+
+if urun1 in urunler:
+      print(urun1,"fiyati:",urunler[urun1])
+
+else:
+      print(urun1,"Urun bulunamadi") 
+      if urun2 in urunler:
+        print(urunler[urun2])
+
+      else:
+        print(urun2,"Urun bulunamadi")
+
+if urun3 in urunler:
+        print(urun3,"fiyati:",urunler[urun3])
+else:
+        print(urun3,"Urun  bulunamadi")
+
+if urun4 in urunler:
+            print(urun4,"fiyati:",urunler[urun4])
+
+else:
+            print(urun4,"Urun bulunamadi")
+
+
+
+toplam_fiyat = 0 
+urunler_listesi = [urun1, urun2, urun3, urun4]
+
+for urun in urunler_listesi:
+    if urun in urunler:
+          toplam_fiyat += urunler[urun]
+
+    else:
+          print(urun,"Urun bulunamadi")
+
+
+print ("Urunler:",urun1, urun2, urun3, urun4,)
+print("Toplam fiyat:", toplam_fiyat ,"TL")
+
+

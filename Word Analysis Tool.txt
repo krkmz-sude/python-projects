@@ -1,0 +1,12 @@
+cumle = input("Bir cumle yazin:")
+kelimeler = cumle.split()
+karakter_sayisi = len(cumle)
+kelime_sayisi = len(kelimeler)
+print("Cumledeki kelime sayisi:",kelime_sayisi)
+print("Cumledeki karakter sayisi:",karakter_sayisi)
+benzersiz_kelimeler = set(kelimeler)
+en_uzun_kelime = max(kelimeler, key=len)
+print("Cumledeki benzersiz kelime sayisi:",len (benzersiz_kelimeler))
+print("Cumledeki en uzun kelime:",en_uzun_kelime)
+ 
+
